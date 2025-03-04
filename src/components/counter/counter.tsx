@@ -1,12 +1,16 @@
 import React from "react";
 import { useCustomToast } from "../toast/toast";
+import { useCounter } from "../../context/CounterContext";
 
 export const Counter = () => {
   const customToast = useCustomToast();
+  const { count, increment } = useCounter();
+
   const handleIncrement = () => {
+    increment();
     customToast({
       heading: "Counter Updated",
-      text: "Current count",
+      text: `Current count: ${count + 1}`,
     });
   };
   return (
@@ -18,7 +22,7 @@ export const Counter = () => {
         fontSize: "18px",
       }}
     >
-      <span>Current Count </span>
+      <span>Current Count {count}</span>
 
       <button
         style={{
