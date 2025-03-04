@@ -8,7 +8,16 @@ function App() {
     <div className="App">
       <ChakraBaseProvider>
         <CounterProvider>
-          <Counter />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "100vh",
+            }}
+          >
+            <Counter />
+          </div>
         </CounterProvider>
       </ChakraBaseProvider>
     </div>

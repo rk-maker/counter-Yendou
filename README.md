@@ -1,3 +1,27 @@
+# Yendou Home Assignment
+
+This project is a simple Counter application built as a home assignment for Yendou working student. It demonstrates the use of React's Context API for state management, a custom hook for encapsulating counter logic, and Chakra UI's toast notifications for user feedback. The application provides a clean and modular approach to state handling while ensuring a seamless user experience.
+
+## Instructions
+
+1. **Install Dependencies** To install the required dependencies, run the following command:
+
+```bash
+npm install @chakra-ui/react@^2.8.2
+```
+
+2. **Configure tsconfig.json** Update your tsconfig.json file with the following compilerOptions
+
+```json
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler"
+  }
+}
+```
+
 ## Approach & Technical choice
 
 ### UI Library:
