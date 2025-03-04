@@ -1,7 +1,14 @@
 import React from "react";
+import { useCustomToast } from "../toast/toast";
 
 export const Counter = () => {
-  const handleIncrement = () => {};
+  const customToast = useCustomToast();
+  const handleIncrement = () => {
+    customToast({
+      heading: "Counter Updated",
+      text: "Current count",
+    });
+  };
   return (
     <div
       style={{
@@ -16,7 +23,7 @@ export const Counter = () => {
       <button
         style={{
           padding: "6px 12px",
-          backgroundColor: "#grey",
+          backgroundColor: "#f0f0f0",
           borderRadius: "10px",
           fontWeight: "600",
           border: "none",
