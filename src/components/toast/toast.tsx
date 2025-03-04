@@ -56,7 +56,7 @@ export const useCustomToast = () => {
   const toast = useToast();
   return (props: CustomToastProps) => {
     toast({
-      position: "bottom-left",
+      position: "bottom-right",
       duration: 3000,
       render: () => <CustomToast {...props} />,
     });

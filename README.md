@@ -1,46 +1,69 @@
-# Getting Started with Create React App
+## Approach & Technical choice
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### UI Library:
 
-## Available Scripts
+- Utilized Chakra UI for styling and Toast notifications to provide user feedback.
 
-In the project directory, you can run:
+- Integrated React Icons for enhanced UI aesthetics.
 
-### `npm start`
+### State Management
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Implemented React Context API for global state management, ensuring efficient state sharing without prop drilling.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Created a CounterProvider to manage the count state and provide an increment function.
 
-### `npm test`
+- Used a custom hook (useCounter) to access the counter context and enforce proper usage within the provider.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Folder Structure
 
-### `npm run build`
+I follow a complete saturated system for organizing the folder structure, ensuring everything is easily accessible and logically grouped. Below is the folder structure for your reference:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+📦src
+ ┣ 📂components
+ ┃ ┣ 📂counter
+ ┃ ┃ ┗ 📜counter.tsx
+ ┃ ┗ 📂toast
+ ┃ ┃ ┗ 📜toast.tsx
+ ┣ 📂context
+ ┃ ┗ 📜CounterContext.tsx
+ ┣ 📜App.css
+ ┣ 📜App.tsx
+ ┣ 📜index.tsx
+ ┣ 📜react-app-env.d.ts
+ ┣ 📜reportWebVitals.ts
+ ┗ 📜setupTests.ts
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**/components**: This folder contains all the reusable components that make up the UI elements of the project.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**/context**: This folder contains CounterContext for state managment.
 
-### `npm run eject`
+## Components
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Custom Toast**
+A reusable Toast made using chakra-ui with custom css
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Props**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+| Prop Name   | Type     | Default     | Description                                    |
+| ----------- | -------- | ----------- | ---------------------------------------------- |
+| `heading`   | `string` | `undefined` | The heading text to be displayed in the toast. |
+| `text`      | `string` | `undefined` | The body text to be displayed in the toast.    |
+| `iconColor` | `string` | `#74C898`   | The color of the icon.                         |
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**Custom Counter**
+A reusable Counter made using custom css
 
-## Learn More
+**Functionality**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Increment Counter: Each time the +1 button is clicked, the counter increments by one.
+- Toast Notification: After the increment, a toast notification is triggered showing the updated count.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Tech Stack
+
+Client: TypeScript, Chakra UI
+
+## Authors
+
+- [Raffay Khan](https://github.com/rk-maker)
